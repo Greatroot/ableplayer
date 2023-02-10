@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Video Player with a playlist (Local Sources) | Able Player Demos</title>
+<link rel="stylesheet" href="demos.css" type="text/css">
+
+<!-- Dependencies -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+
+<!-- Able Player CSS -->
+<link rel="stylesheet" href="../build/ableplayer.min.css" type="text/css"/>
+
+<!-- Able Player JavaScript -->
+<script src="../build/ableplayer.js"></script>
+
+<!-- CSS for this example page -->
+<style>
+	main {
+		position: relative;
+		width: 100%;
+	}
+	#player {
+		float: left;
+		width: 640px;
+		max-width: 95%;
+		margin: 0;
+	}
+	#playlist {
+		float: left;
+		border: 1px solid #DDD;
+		margin: 20px;
+	}
+	#playlist h2 {
+		text-align: center;
+	}
+</style>
+
+</head> go8_feb2023_demo
+
+<body>
+	<header>
+		<div class="title">Able Player Demos</div>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.html">More demos</a></li>
+			<li><a href="https://ableplayer.github.io/ableplayer">Able Player Home</a></li>
+		</ul>
+	</nav>
+	<main>
+		<h1>Video player with a playlist (Local Sources)</h1>
+
+		<p>This page includes a playlist of three videos, all stored locally. 
+			They each have a variety of different assets to test how gracefully the player can adapt 
+			to these changes as new media sources are loaded.
+			</p>
+
+		<div id="player">
+			<!-- video source and track elements will be populated from playlist -->
+			<video id="video1" width="640" height="480" preload="auto" data-able-player data-skin="2020" playsinline loop></video>
+		</div>
+		<div id="playlist">
+			<h2>Playlist</h2>
+			<!-- an AblePlayer playlist is any <ul> with class="able-playlist" -->
+			<!-- The value of data-player must match the id of the media element -->
+			<!-- see documentation for additional details -->
+			<ul class="able-playlist" data-player="video1">
+				<!-- CTY Video #1 -->
+				<li data-poster="../media/CTY_1_thumbnail.jpg" data-width="480" data-height="360">
+					<span class="able-source"
+						  data-type="video/mp4"
+						  data-src="../media/CTY_1.mp4"
+						  data-desc0-src="../media/wwa_described.mp4"
+						  data-sign-src="../media/wwa_sign.mp4"></span>
+					<span class="able-source"
+						  data-type="video/webm"
+						  data-src="../media/wwa.webm"
+						  data-desc0-src="../media/wwa_described.webm"
+						  data-sign-src="../media/wwa_sign.webm"></span>
+					<span class="able-track"
+						  data-kind="captions"
+						  data-src="../media/CTY_1_transcript.vtt"
+						  data-srclang="en"
+						  data-label="English"></span>
+					<button type="button">
+						<img src="../media/CTY_1_thumbnail.jpg" alt="">
+							Clinical Research
+					</button>
+				</li>
+				<!-- CTY Video #11 -->
+				<li data-poster="../media/CTY_11_thumbnail.jpg">
+					<span class="able-source"
+						data-type="video/mp4"
+						data-src="../media/CTY_11.mp4"
+						data-desc-src="../media/itaccess-excerpt-described.mp4"></span>
+					<span class="able-track"
+						data-kind="captions"
+						data-src="../media/CTY_11_transcript.vtt"
+						data-srclang="en"
+						data-label="English"></span>
+					<button type="button">
+						<img src="../media/CTY_11_thumbnail.jpg" alt="">
+						Research Methods
+					</button>
+				</li>
+				<!-- CTY Video #12 -->
+				<li data-poster="../media/CTY_12_thumbnail.mp4" data-width="800" data-height="450">
+					<span class="able-source"
+						data-type="video/mp4"
+						data-src="../media/CTY_12.mp4"
+						data-desc-src="../media/deadline_desc.mp4"></span>
+					<span class="able-track"
+						data-kind="captions"
+						data-src="../media/CTY_12_transcript.vtt"
+						data-srclang="en"
+						data-label="English"></span>
+					<button type="button">
+						<img src="../media/CTY_12_thumbnail.jpg" alt="">
+						Participant Groups
+					</button>
+				</li>
+				<!-- CTY Video #15 -->
+				<li data-poster="../media/CTY_15_thumbnail.jpg" data-width="800" data-height="450">
+					<span class="able-source"
+						  data-type="video/mp4"
+						  data-src="../media/CTY_15.mp4"
+						  data-desc-src="../media/deadline_desc.mp4"></span>
+					<span class="able-track"
+						  data-kind="captions"
+						  data-src="../media/CTY_15_transcript.vtt"
+						  data-srclang="en"
+						  data-label="English"></span>
+					<button type="button">
+						<img src="../media/CTY_15_thumbnail.jpg" alt="">
+						Safety Protection
+					</button>
+				</li>
+			</ul>
+		</div>
+	</main>
+</body>
+</html>
